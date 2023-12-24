@@ -6,21 +6,21 @@ Parts of Device:
 Remote, adult toilet adapter, baby adapter, and phone application 
 
 Remote Components:
- -Button #1 - Pee button
- -Led #1 - Flashes when 'Button #1' was pressed until reset or mass change (child sitting on toilet/waste mass detected) 
+ - Button #1 - Pee button
+ - Led #1 - Flashes when 'Button #1' was pressed until reset or mass change (child sitting on toilet/waste mass detected) 
 
- -Button #2 - Poo Button
- -Led #2 - Flashes when 'Button #2' was pressed until reset or mass change (child sitting on toilet/waste mass detected) 
+ - Button #2 - Poo Button
+ - Led #2 - Flashes when 'Button #2' was pressed until reset or mass change (child sitting on toilet/waste mass detected) 
  
- -Button #3 - Cancel Button:   Turns off Led #1 and Led #2 OR resets entire loop (TBD) 
- -Led #3 - Blink when pressed to give user feedback that button was pressed. 
+ - Button #3 - Cancel Button:   Turns off Led #1 and Led #2 OR resets entire loop (TBD) 
+ - Led #3 - Blink when pressed to give user feedback that button was pressed. 
 
- -Switch - Adult Mode (On state) & Baby Mode (off state) 
- -Led #4 - Blinks 1 time when on state is established, Blinks 2 times when off state is established 
+ - Switch - Adult Mode (On state) & Baby Mode (off state) 
+ - Led #4 - Blinks 1 time when on state is established, Blinks 2 times when off state is established 
 
- -HC05 Bluetooth Module (to mesh with other devices)
- -ESP2886 Wifi module (to connect with phone app or IoT) 
- -RGB LED  - reports state of BT connection by color, if all BT connections are good, will report state of ESP status by color. 
+ - HC05 Bluetooth Module (to mesh with other devices)
+ - ESP2886 Wifi module (to connect with phone app or IoT) 
+ - RGB LED  - reports state of BT connection by color, if all BT connections are good, will report state of ESP status by color. 
 
 
 Adult toilet adapter:
