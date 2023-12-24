@@ -1,5 +1,5 @@
-# Party-Pooper
-A Bluetooth/Wifi Device &amp; Phone App that assists in potty training a toddler 
+# Party-Pooper - Arduino Project 
+A Bluetooth/Wi-Fi device &amp; Phone App that assists in potty training a toddler 
 
 
 ## Parts of Device:
