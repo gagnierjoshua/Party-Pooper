@@ -24,6 +24,8 @@ Remote Components:
 
 
 Adult toilet adapter:
+- scrapped, Bluetooth 2-way between the baby & remote makes sense, any more is too much. The adult tasks (waste production, toilet roll spinning, washing hands, and reward giving) can be checked in on the app directly to model the proper feedback loop and will take place on the baby toilet.
+
 
 
 Baby toilet adapter :
