@@ -31,6 +31,7 @@ Remote, adult toilet adapter, baby adapter, and phone application
 ## Baby toilet adapter :
 
 
-Phone application: 
+## Phone application and/or IoT integration
+
 
 
