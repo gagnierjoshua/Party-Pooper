@@ -2,44 +2,79 @@
 //https://arduinogetstarted.com/tutorials/arduino-switch arduino toggle switch
 #include <ezButton.h> 
 ezButton toggleSwitch(7);  // create ezButton object that attach to pin 7;
+
 //HCO5 - MASTER CODE https://howtomechatronics.com/tutorials/arduino/how-to-configure-pair-two-hc-05-bluetooth-module-master-slave-commands/
 int state = 0;
 int potValue = 0;
-//RGB LED code https://arduinogetstarted.com/tutorials/arduino-rgb-led
-const int PIN_RED   = 5;
-const int PIN_GREEN = 6;
-const int PIN_BLUE  = 9;
-//Arduino Button Code  https://roboticsbackend.com/arduino-push-button-tutorial/
-#define BUTTON_PIN 4
 
+//RGB LED code https://arduinogetstarted.com/tutorials/arduino-rgb-led
+const int RGB_Light_R   = 5;
+const int RGB_Light_B  = 6;
+const int RGB_Light_G   = 9;
+
+//Arduino Button Code  https://roboticsbackend.com/arduino-push-button-tutorial/
+#define RESET_BUTTON 10
+#define POOP_BUTTON 11
+#define PEE_BUTTON 12
 
 void setup() {
 
 //HCO5 - MASTER CODE https://howtomechatronics.com/tutorials/arduino/how-to-configure-pair-two-hc-05-bluetooth-module-master-slave-commands/
 Serial.begin(38400); // Default communication rate of the Bluetooth module
 Serial.begin(9600);
-toggleSwitch.setDebounceTime(50); // set debounce time to 50 milliseconds                  
+toggleSwitch.setDebounceTime(50); // set debounce time to 50 milliseconds 
+
 // ------------------- https://linuxhint.com/use-analog-pin-as-digital/ -----
-pinMode(A5, OUTPUT); //led poop
-pinMode(A4, OUTPUT); //led pee
-pinMode(A3, OUTPUT); //led power reset
-pinMode(A2, OUTPUT); //led cancel 
-pinMode(A1, OUTPUT); //led adult setting
-pinMode(A0, OUTPUT); //led baby setting 
+pinMode(A5/*Poo Led*/, OUTPUT); 
+pinMode(A4/*Pee Led*/, OUTPUT); 
+pinMode(A3/*Power reset Led*/, OUTPUT); 
+pinMode(A2/*Cancel Led*/, OUTPUT);
+pinMode(A1/*adult Led*/, OUTPUT); 
+pinMode(A0/*baby Led*/, OUTPUT); 
+
 // --- RGB LED 
- pinMode(PIN_RED,   OUTPUT);
- pinMode(PIN_GREEN, OUTPUT);
- pinMode(PIN_BLUE,  OUTPUT);
+ pinMode(RGB_Light_R,   OUTPUT);
+ pinMode(RGB_Light_B, OUTPUT);
+ pinMode(RGB_Light_G,  OUTPUT);
+
 // ----- Button 
-pinMode(BUTTON_PIN, INPUT_PULLUP);
+pinMode(RESET_BUTTON, INPUT_PULLUP);
+pinMode(POOP_BUTTON, INPUT_PULLUP);
+pinMode(PEE_BUTTON, INPUT_PULLUP);
 }
 
 void loop() {
 //------------------------------ LED Generic -------------------------
-digitalWrite(A5,HIGH);
+digitalWrite(A5/*Poo Led*/,,HIGH);
 delay(1000);
-digitalWrite(A5,LOW);
+digitalWrite(A5/*Poo Led*/,,LOW);
 delay(1000);
+
+digitalWrite(A4/*Pee Led*/,HIGH);
+delay(1000);
+digitalWrite(A4/*Pee Led*/,LOW);
+delay(1000);
+
+digitalWrite(A3/*Power reset Led*/,HIGH);
+delay(1000);
+digitalWrite(A3/*Power reset Led*/,LOW);
+delay(1000);
+
+digitalWrite(A2/*Cancel Led*/,HIGH);
+delay(1000);
+digitalWrite(A2/*Cancel Led*/,LOW);
+delay(1000);
+
+digitalWrite(A1/*adult Led*/,HIGH);
+delay(1000);
+digitalWrite(A1/*adult Led*/,LOW);
+delay(1000);
+
+digitalWrite(A0/*baby Led*/,HIGH);
+delay(1000);
+digitalWrite(A0/*baby Led*/,LOW);
+delay(1000);
+
 //------------------------------ Toggle Switch -------------------------
 toggleSwitch.loop(); // MUST call the loop() function first
   if (toggleSwitch.isPressed())
@@ -51,6 +86,7 @@ toggleSwitch.loop(); // MUST call the loop() function first
     Serial.println("The switch: OFF");
   else
     Serial.println("The switch: ON");
+
 //------------------- RGB LED Arduino 
  // color code #00C9CC (R = 0,   G = 201, B = 204)
   analogWrite(PIN_RED,   0);
@@ -68,7 +104,9 @@ toggleSwitch.loop(); // MUST call the loop() function first
   analogWrite(PIN_BLUE,  83);
   delay(1000); // keep the color 1 second
 // --------------Button Code 
- byte buttonState = digitalRead(BUTTON_PIN);
+
+
+ byte buttonState = digitalRead(RESET_BUTTON);
   if (buttonState == LOW) {
       Serial.println("Button is pressed");
   }
@@ -76,6 +114,29 @@ toggleSwitch.loop(); // MUST call the loop() function first
       Serial.println("Button is not pressed");
   }
   delay(100);
+
+ byte buttonState = digitalRead(POOP_BUTTON);
+  if (buttonState == LOW) {
+      Serial.println("Button is pressed");
+  }
+  else {
+      Serial.println("Button is not pressed");
+  }
+  delay(100);
+
+
+ byte buttonState = digitalRead(PEE_BUTTON);
+  if (buttonState == LOW) {
+      Serial.println("Button is pressed");
+  }
+  else {
+      Serial.println("Button is not pressed");
+  }
+  delay(100);
+
+
+
+
 }
 
 
